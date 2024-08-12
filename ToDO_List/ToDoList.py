@@ -69,4 +69,4 @@ def checkTimeLeft(m):
 
 while True:
     my_job()
-    time.sleep(60)
+    time.sleep(604800)
