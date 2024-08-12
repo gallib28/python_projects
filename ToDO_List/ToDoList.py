@@ -43,3 +43,10 @@ while True :
 
 
 
+def checkTimeLeft(obj):
+    # function to run as a job
+    print("This is my job")
+
+while True:
+    my_job()
+    time.sleep(60)
