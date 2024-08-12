@@ -1,6 +1,22 @@
-
+import 
 from collections.abc import ItemsView
-toDo =[]  
+toDo =[] 
+class mission :
+  name 
+
+  def __init__(self, task ,introDate,finishedDate):
+    self.task = task
+    self.introDate = introDate
+    self.finishedDate = finishedDate
+
+
+
+
+
+
+
+
+
 
 def view(t) :
   for i in toDo :
@@ -43,9 +59,13 @@ while True :
 
 
 
-def checkTimeLeft(obj):
-    # function to run as a job
-    print("This is my job")
+def checkTimeLeft(m):
+  for i in toDo:
+    if m.finishedDate<5 :
+       printobj(m)
+       print("need to finish this task ")
+
+
 
 while True:
     my_job()
