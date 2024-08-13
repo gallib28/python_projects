@@ -9,17 +9,17 @@ class mission :
 
 
 
-def view(t) :
+def view(mission) :
   for i in toDo :
     print(i) 
 
-def add(list,item):
-  if check(item)==True:
-    list.append(item)
+def add(list,mission):
+  if check(mission)==True:
+    list.append(mission)
 
-def delete(list,item):
-  if check(item)==True and item in list:
-    list.remove(item.index(item))
+def delete(list,mission):
+  if check(mission)==True and mission in list:
+    list.remove(item.index(mission))
 
 def check(item):
   if type(item) != str:
