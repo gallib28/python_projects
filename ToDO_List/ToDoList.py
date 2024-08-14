@@ -1,12 +1,13 @@
- 
+import pyodbc
 from collections.abc import ItemsView
 toDo =[] 
+
+
 class mission : 
   def __init__(self, task ,introDate,finishedDate):
     self.task = task
     self.introDate = introDate
     self.finishedDate = finishedDate
-
 
 def helpFind(item):
   if type(item) != str:
