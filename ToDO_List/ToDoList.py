@@ -1,13 +1,17 @@
 import pyodbc
 from collections.abc import ItemsView
-toDo =[] 
+import  tkinter as tk
 
 
-class mission : 
+
+class Mission : 
+  name="name of task"
+  dueDate = "00-00-0000"
+  createDate = "00-00-0000" 
   def __init__(self, task ,introDate,finishedDate):
-    self.task = task
+    self.name = task
     self.introDate = introDate
-    self.finishedDate = finishedDate
+    self.dueDate = finishedDate
 
 def helpFind(item):
   if type(item) != str:
@@ -23,15 +27,19 @@ def viewTask(mission) :
 def addTask(list,mission):
   if helpFind(mission)==True:
     list.append(mission)
+    size += 1 
 
 def deleteTask(list,mission):
   if helpFind(mission)==True and mission in list:
     list.remove(item.index(mission))
+    size -= 1 
+
 
 def printobj(mission):
-  print(mission.task,'\n')
+  print(mission.name,'\n')
   print(mission.introDate,'\n')
   print(mission.finishedDate,'\n')
+
 
 def checkTimeLeft(toDo):
   for i in toDo:
@@ -40,14 +48,14 @@ def checkTimeLeft(toDo):
        {printobj(toDo[i])} ")
 
 
-
+# for timing the program 
 while True:
     checkTimeLeft(toDo)
     time.sleep(604800)
     
 
-
-
+toDo = [] 
+size = 0 
 # while True :
 #   print("1. view")
 #   print("2. add")
