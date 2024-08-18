@@ -18,6 +18,22 @@ create table Tasks(
 
 );
 
+-- query to check due less than 5 
+select task_dueDate 
+from tasks 
+where task_dueDate<= 5 ;
+ 
+-- query to give the avg of finishing the tasks  
+select avg(task_completeDate) 
+from tasks  ; 
+
+
+
+
+
+
+
+
 
 
 

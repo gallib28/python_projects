@@ -1,6 +1,11 @@
 import pyodbc
+import pandas 
 from collections.abc import ItemsView
 import  tkinter as tk
+import datetime
+
+curr_date = datetime.datetime.now()
+print(curr_date)
 
 
 
@@ -12,6 +17,10 @@ class Mission :
     self.name = task
     self.introDate = introDate
     self.dueDate = finishedDate
+
+  def getDueDate():
+    return this.dueDate 
+  
 
 def helpFind(item):
   if type(item) != str:
