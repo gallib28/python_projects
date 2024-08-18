@@ -17,18 +17,7 @@ class Mission :
     self.name = task
     self.introDate = introDate
     self.dueDate = finishedDate
->>>>>>> 9832751b43050eadffd820c03c45ee10e4240d93
 
-<<<<<<< HEAD
-# class Mission : 
-#   name="name of task"
-#   dueDate = "00-00-0000"
-#   createDate = "00-00-0000" 
-#   def __init__(self, task ,introDate,finishedDate):
-#     self.name = task
-#     self.introDate = introDate
-#     self.dueDate = finishedDate
-=======
   def getDueDate():
     return this.dueDate 
   
@@ -39,7 +28,6 @@ def helpFind(item):
     return False 
   else:
     return True 
->>>>>>> 9832751b43050eadffd820c03c45ee10e4240d93
 
 # def helpFind(item):
 #   if type(item) != str:
