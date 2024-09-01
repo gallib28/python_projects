@@ -1,12 +1,12 @@
 create table Tasks(
-	task_id varchar(10) NOT null primary key ,
+	task_id integer NOT null primary key AUTOINCREMENT ,
 	task_dueDate char(10) null,
 	
 	task_type char(1) not null,
 	constraint check_task_type check (task_type in ('w','s','p','t')),
 	
 	task_description varchar(100) not null ,
-	constraint check_task_description check (task_name like '%[a-zA-Z]%' or task_name like '%[א-ת]%' ),
+	constraint check_task_description check (task_description like '%[a-zA-Z]%' or task_name like '%[א-ת]%' ),
 	
 		
 	task_status char(10) not null,
@@ -14,12 +14,25 @@ create table Tasks(
 	
 	task_completeDate char(10) null,
 	constraint check_task_completeDate check (task_completeDate like  '[0-3][0-9]-[0-1][0-9]-[1-2][0-9][0-9][0-9]'),
-	
+	user_id integer , 
+	FOREIGN KEY (user_id) references users(user_id) 
 
 );
 
-insert into tasks(task_id,task_dueDate,task_name,task_status,null) values 
-()
+create table users (
+	user_id char(1) not null primary key AUTOINCREMENT,
+	task_id varchar(10) NOT null ,
+	FOREIGN KEY (task_id) references Tasks(task_id) 
+);
+
+
+-- inserting to tasks 
+insert into tasks(task_id,task_dueDate,task_name,task_status,task_completeDate) values (?,?,?,?,?)
+-- inserting into users 
+insert into users(user_id,task_id) values (?,?)
+
+
+
 
 
 --update due_date
@@ -58,3 +71,11 @@ where task_dueDate<= 5 ;
 select avg(task_completeDate) 
 from tasks  ; 
 
+-- all task table 
+SELECT * FROM Tasks;
+
+-- Select all tasks for a specific user
+SELECT * FROM Tasks WHERE user_id = {userId}; 
+
+-- Select specific task details
+SELECT task_description, task_dueDate FROM Tasks WHERE task_id = {taskId};
