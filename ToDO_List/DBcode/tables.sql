@@ -77,5 +77,5 @@ SELECT * FROM Tasks;
 -- Select all tasks for a specific user
 SELECT * FROM Tasks WHERE user_id = {userId}; 
 
--- Select specific task details
+	-- Select specific task details
 SELECT task_description, task_dueDate FROM Tasks WHERE task_id = {taskId};
